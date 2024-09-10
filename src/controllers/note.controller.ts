@@ -26,13 +26,11 @@ const getNotes = catchAsync(async (req: Request, res: Response): Promise<void> =
  * @returns {Promise<void>}
  */
 const createNote = catchAsync(async (req: Request, res: Response): Promise<void> => {
-  const { title, content, userId } = req.body;
-  const userIdNumber = Number(userId);
+  const { title, content } = req.body;
 
   const note: Note = await noteService.createNote({
     title,
-    content,
-    userId: userIdNumber
+    content
   });
   res.status(httpStatus.CREATED).send({ message: 'Note created successfully', note });
 });

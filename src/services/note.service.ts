@@ -9,11 +9,7 @@ import { notDeepEqual } from 'assert';
  * @param {Object} noteBody - Contains title, content, and userId
  * @returns {Promise<Note>}
  */
-const createNote = async (noteBody: {
-  title: string;
-  content: string;
-  userId: number;
-}): Promise<Note> => {
+const createNote = async (noteBody: { title: string; content: string }): Promise<Note> => {
   return prisma.note.create({
     data: noteBody
   });
