@@ -3,6 +3,7 @@ import app from './app';
 import prisma from './client';
 import config from './config/config';
 import logger from './config/logger';
+import routes from './routes/v1';
 
 let server: Server;
 prisma.$connect().then(() => {
